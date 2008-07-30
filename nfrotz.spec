@@ -35,7 +35,10 @@ if present.
 %prep
 %setup -q -n %{name}-%{version}
 
+perl -pi -e "s|/lib/|/%_lib/|" configure
+
 %build
+
 %configure
 %make
 
