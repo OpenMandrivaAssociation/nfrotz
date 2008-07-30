@@ -11,7 +11,6 @@ URL:            http://www.stanford.edu/~mcmartin/if/
 License:        GPLv2
 
 Group:          Games/Other
-Requires:       libncursesw.so
 BuildRequires:  libncursesw-devel
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 
