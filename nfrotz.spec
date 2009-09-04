@@ -1,6 +1,6 @@
 %define name    nfrotz
 %define version 0.3.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:           %{name}
 Summary:        Z-machine interpreter for Interactive Fiction games, with support for unicode
