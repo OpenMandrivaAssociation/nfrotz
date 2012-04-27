@@ -1,9 +1,9 @@
 %define name    nfrotz
 %define version 0.3.3
-%define release %mkrel 2
+%define release 3
 
 Name:           %{name}
-Summary:        Z-machine interpreter for Interactive Fiction games, with support for unicode
+Summary:        Z-machine interpreter for Interactive Fiction games, with support for Unicode
 Version:        %{version}
 Release:        %{release}
 Source0:        http://mirror.ifarchive.org/if-archive/infocom/interpreters/frotz/%{name}-%{version}.tgz
@@ -11,7 +11,7 @@ URL:            http://www.stanford.edu/~mcmartin/if/
 License:        GPLv2
 
 Group:          Games/Other
-BuildRequires:  libncursesw-devel
+BuildRequires:  ncursesw-devel
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 
 %description
@@ -29,7 +29,7 @@ outlines of V6 graphics with the picture number in the bottom-right corner.
 NFrotz is a merged port of the original Unix Frotz, incorporating
 extensions made by the WinFrotz port.
 The primary visible difference between NFrotz and ordinary Frotz is
-support for UTF-8 terminals and some awareness of iFiction-based metadata
+support for UTF-8 terminals and some awareness of iFiction-based meta-data
 if present.
 
 %prep
