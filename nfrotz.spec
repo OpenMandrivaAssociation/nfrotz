@@ -55,3 +55,20 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 %{_bindir}/*
 
+
+
+%changelog
+* Fri Apr 27 2012 Crispin Boylan <crisb@mandriva.org> 0.3.3-3
++ Revision: 794037
+- Rebuild
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Wed Jul 30 2008 Michael Scherer <misc@mandriva.org> 0.3.3-1mdv2009.0
++ Revision: 254964
+- fix build on x86_64 ( with /lib hardcoded in the script )
+- remove wrong Requires
+- update to 0.3.3
+- import nfrotz
+
