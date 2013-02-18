@@ -1,3 +1,6 @@
+%define _enable_debug_packages %{nil}
+%define debug_package          %{nil}
+
 %define name    nfrotz
 %define version 0.3.3
 %define release 3
