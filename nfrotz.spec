@@ -1,21 +1,13 @@
-%define _enable_debug_packages %{nil}
-%define debug_package          %{nil}
-
-%define name    nfrotz
-%define version 0.3.3
-%define release 3
-
-Name:           %{name}
-Summary:        Z-machine interpreter for Interactive Fiction games, with support for Unicode
-Version:        %{version}
-Release:        %{release}
-Source0:        http://mirror.ifarchive.org/if-archive/infocom/interpreters/frotz/%{name}-%{version}.tgz
-URL:            http://www.stanford.edu/~mcmartin/if/
-License:        GPLv2
-
-Group:          Games/Other
-BuildRequires:  ncursesw-devel
-BuildRoot:      %{_tmppath}/%{name}-buildroot
+Summary:	Z-machine interpreter for Interactive Fiction games, with support for Unicode
+Name:		nfrotz
+Version:	0.3.3
+Release:	4
+License:	GPLv2+
+Group:		Games/Other
+Url:		http://www.stanford.edu/~mcmartin/if/
+Source0:	http://mirror.ifarchive.org/if-archive/infocom/interpreters/frotz/%{name}-%{version}.tgz
+Patch0:		nfrotz-0.3.3-no-strip.patch
+BuildRequires:	pkgconfig(ncursesw)
 
 %description
 NFrotz is a Z-Machine interpreter. The Z-machine is a virtual machine
@@ -35,43 +27,23 @@ The primary visible difference between NFrotz and ordinary Frotz is
 support for UTF-8 terminals and some awareness of iFiction-based meta-data
 if present.
 
+%files
+%doc AUTHORS ChangeLog COPYING HOW_TO_PLAY README
+%{_bindir}/*
+%{_mandir}/man6/*
+
+#----------------------------------------------------------------------------
+
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p1
 
-perl -pi -e "s|/lib/|/%_lib/|" configure
+perl -pi -e "s|/lib/|/%{_lib}/|" configure
 
 %build
-
-%configure
-%make
+%configure2_5x
+%make OTHERCFLAGS="%{optflags}"
 
 %install
-rm -rf %{buildroot}
-make PREFIX=%{buildroot}/usr MAN_PREFIX=%{buildroot}/usr/share install
-
-%clean
-rm -rf %{buildroot}
-
-%files
-%defattr(-,root,root,0755)
-%doc AUTHORS ChangeLog COPYING HOW_TO_PLAY README
-%{_mandir}/*/*
-%{_bindir}/*
-
-
-
-%changelog
-* Fri Apr 27 2012 Crispin Boylan <crisb@mandriva.org> 0.3.3-3
-+ Revision: 794037
-- Rebuild
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - rebuild
-
-* Wed Jul 30 2008 Michael Scherer <misc@mandriva.org> 0.3.3-1mdv2009.0
-+ Revision: 254964
-- fix build on x86_64 ( with /lib hardcoded in the script )
-- remove wrong Requires
-- update to 0.3.3
-- import nfrotz
+make PREFIX=%{buildroot}%{_prefix} MAN_PREFIX=%{buildroot}%{_datadir} install
 

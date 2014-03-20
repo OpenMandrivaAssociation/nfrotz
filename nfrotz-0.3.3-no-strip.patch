@@ -1,0 +1,11 @@
+diff -urN nfrotz-0.3.3/Makefile nfrotz-0.3.3-patched/Makefile
+--- nfrotz-0.3.3/Makefile	2008-03-31 09:42:37.000000000 +1100
++++ nfrotz-0.3.3-patched/Makefile	2014-03-20 20:44:31.763274174 +1100
+@@ -21,7 +21,6 @@
+ 	$(MAKE) -C src depend
+ 
+ install: nfrotz
+-	strip nfrotz
+ 	install -d $(PREFIX)/bin
+ 	install -d $(MAN_PREFIX)/man/man6
+ 	install -c -m 755 nfrotz $(PREFIX)/bin
