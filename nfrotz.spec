@@ -1,7 +1,7 @@
 Summary:	Z-machine interpreter for Interactive Fiction games, with support for Unicode
 Name:		nfrotz
 Version:	0.3.3
-Release:	4
+Release:	5
 License:	GPLv2+
 Group:		Games/Other
 Url:		http://www.stanford.edu/~mcmartin/if/
