@@ -4,7 +4,7 @@ Version:	0.3.3
 Release:	5
 License:	GPLv2+
 Group:		Games/Other
-Url:		http://www.stanford.edu/~mcmartin/if/
+Url:		https://www.stanford.edu/~mcmartin/if/
 Source0:	http://mirror.ifarchive.org/if-archive/infocom/interpreters/frotz/%{name}-%{version}.tgz
 Patch0:		nfrotz-0.3.3-no-strip.patch
 BuildRequires:	pkgconfig(ncursesw)
