@@ -7,6 +7,11 @@ Group:		Games/Other
 Url:		https://www.stanford.edu/~mcmartin/if/
 Source0:	http://mirror.ifarchive.org/if-archive/infocom/interpreters/frotz/%{name}-%{version}.tgz
 Patch0:		nfrotz-0.3.3-no-strip.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(ncursesw)
 
 %description
